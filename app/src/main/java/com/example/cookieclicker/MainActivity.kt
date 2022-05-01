@@ -6,10 +6,11 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.ImageView
+import android.widget.TextView
 import android.widget.Toast
 import kotlin.math.min
 
-internal class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity() {
 
     private var currentScore = 0
 
@@ -24,6 +25,7 @@ internal class MainActivity : AppCompatActivity() {
                 .show()
             val a = min(currentScore * 10, 255)
             imgCookie.setColorFilter(Color.argb(a, 0, 255, 255))
+            findViewById<TextView>(R.id.lblTotal).text = currentScore.toString()
         }
 
     }
